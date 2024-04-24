@@ -1,0 +1,91 @@
+{
+  "candidats": [
+    {
+      "etat": 1,
+      "nom": "Sameh",
+      "prenom": "Sameh",
+      "dateEntretien": "2023-11-15",
+      "genre": "homme",
+      "id": 2
+    },
+    {
+      "etat": 1,
+      "nom": "Wechtati",
+      "prenom": "Anas",
+      "dateEntretien": "2023-05-14",
+      "genre": "homme",
+      "id": 3
+    },
+    {
+      "etat": 1,
+      "nom": "Abidi",
+      "prenom": "Ghada",
+      "dateEntretien": "1994-06-02",
+      "genre": "femme",
+      "id": 4
+    },
+    {
+      "etat": 0,
+      "nom": "Wechtati",
+      "prenom": "Sameh",
+      "dateEntretien": "1992-12-13",
+      "genre": "homme",
+      "id": 5
+    },
+    {
+      "etat": 1,
+      "nom": "Samah",
+      "prenom": "Wechtati",
+      "dateEntretien": "1222-12-12",
+      "genre": "homme",
+      "id": 6
+    }
+  ],
+  "Utilisateur": [
+    {
+      "id": 1,
+      "username": "ANASWechtati",
+      "numP": 10000000,
+      "adressmail": "ANASWECHTATI2@gmail.com",
+      "adress": "Mina",
+      "password": "123123123"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "username": "Sdqsdq",
+      "id": 123,
+      "password": "dcdcddcvdv",
+      "numP": 0,
+      "adressmail": "ANASWECHTATI2@gmail.com",
+      "adress": "t"
+    },
+    {
+      "username": "GhadaWechtati",
+      "password": "123123123",
+      "id": 23,
+      "numP": 12345689,
+      "adressmail": "sameh20950@gmail.com",
+      "adress": "Tunis"
+    }
+  ]
+}

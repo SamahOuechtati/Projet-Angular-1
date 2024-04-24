@@ -1,0 +1,91 @@
+<form   >
+    <button routerLink="/home">Home</button>
+    <a routerLink="/Login">S'inscrire</a><br>
+    
+        <div class="container">
+        <div class="text">
+        <div>Reference :</div>
+        <input type="number" name="id" [(ngModel)]="logins.id" #id="ngModel"><br>
+        Nom d'utilisateur :*
+        </div>
+        <form  >
+        <div class="form-row">
+            <div class="input-data">
+                
+                <input type="text" name="username" [(ngModel)]="logins.username" #username="ngModel" minlength="6" maxlength="30" required>
+            <div *ngIf="username.invalid && username.touched">Nom d'utilisateur  est obligatoire !!!
+            <div *ngIf="username.errors!['minlength']" >taille minumum est 6 caractere et le maximum 30 caractere
+    
+            </div>
+        </div>
+                <div class="underline"></div>
+                <label for="">Mot de passe :*</label>
+            </div>
+            <div class="input-data">
+                <input type="password" name="password" [(ngModel)]="logins.password" required minlength="8" #password="ngModel">
+                <div *ngIf="logins.password && logins.password.length < 8" class="alert alert-danger">
+                Le mot de passe doit contenir au moins 8 caractères.
+                </div><br>
+            
+                <label for="">Numero Portable :*</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <input type="number" name="numP" [(ngModel)]="logins.numP" required min="10000000" max="99999999" #numP="ngModel">
+                <div *ngIf="numP.invalid && numP.touched">
+                <div *ngIf="numP.errors?.['required']">Le numero tel est requis.</div>
+                <div *ngIf="numP.errors?.['min'] || numP.errors?.['max']">Le numero tel doit contenir exactement 8 chiffres.</div>
+                </div>
+            </div>
+            <div>
+                <div class="underline"></div>
+                <label for="">Email Address :*</label>
+            </div>
+            <div class="input-data">
+                <input type="string" name="adressmail" [(ngModel)]="logins.adressmail"  #adressmail="ngModel" required>
+                <div *ngIf="adressmail.invalid && adressmail.touched" > L'adresse e-mail est obligatoire</div>
+               
+            
+                <div class="underline"></div>
+                <label for="">Localistaion :*</label>
+            </div>
+        </div>
+        <div class="form-row">
+        <div class="input-data textarea">
+            <input type="string" name="adress" [(ngModel)]="logins.adress" #adress="ngModel" maxlength="30" required>
+            <div *ngIf="adress.invalid && adress.touched">l'adresse local est obligatoire</div>
+        
+                    <div>
+                    </div>
+                    
+                    <div>* Champ obligatoire</div>
+                    
+                </div>
+            </div>
+        
+        <button type="submit" (click)="saveUtil()">Save</button>
+
+        <table  border="1">
+            <tr>
+                <td>Reference</td>
+                <td>username</td>
+                <td>password</td>
+                <td>numer tl</td>
+                <td>adress</td>
+                <td>adress mail</td>
+                
+            </tr>
+            <tr *ngFor="let p of util" >
+                <td>{{p.id}}</td>
+                <td>{{p.username}}</td>        
+                <td>{{p.password}}</td>
+                <td>{{p.numP}}</td>
+                <td>{{p.adress}}</td>
+                <td>{{p.adressmail}}</td>
+                
+            </tr>
+        </table>
+
+
+</form>

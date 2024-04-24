@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+<button routerLink="/home">Home</button>
+<button routerLink="/add-candidat" > Add Candidat </button><br>
+<a routerLink="/Login">S'inscrire</a>
+<div>
+    <input type="text" [(ngModel)]="nom" name="recherche" #recherche="ngModel" required>
+    <button type="button" (click)="searchCandidat()">Chercher</button>
+
+
+    <div *ngIf="candidat != null">	Nom : {{candidat.nom}} <br>
+		Prenom : {{candidat.prenom}} <br>
+		Dateentretien : {{candidat.dateEntretien}} <br>
+		Etat : {{candidat.etat}} <br>
+	</div>
+	<div *ngIf="candidat == null && candidatNonTrouve">
+		<!-- Afficher un message si aucun candidat n'a été trouvé -->
+		Aucun candidat trouvé avec le nom : {{nom}}
+	  </div>
+	<div *ngIf="recherche.invalid && recherche.touched">
+	<div *ngIf="recherche.errors!['required']"> choisir un candidat !!</div>
+</div>
+</div>
+<br>
+<table  border="1">
+	<tr>
+		
+		<td>Nom</td>
+		<td>Prenom</td>
+		<td>Date Naissance</td>
+		<td>Etat</td>
+		<td>genre</td>
+		<td>Age</td>
+		<td>Actions</td>
+		<td>Suppression</td>
+	</tr>
+	<tr *ngFor="let candidat of candidats" [style.background-color]="candidat.etat==1 ? 'green' : 'red'">
+		<td>{{candidat.nom}}</td>
+		<td>{{candidat.prenom}}</td>
+	
+			
+		  
+		<td>{{candidat.dateEntretien}}</td>
+		<td>{{candidat.etat}}</td>
+		<td>{{candidat.genre}}</td>
+		<td>{{calculateAge(candidat.dateEntretien)}}</td>
+		
+		<td>
+			<button *ngIf="candidat.etat == 1" type="button" (click)="changerEtat(candidat)">Desaffecter</button>
+			<button *ngIf="candidat.etat == 0" type="button" (click)="changerEtat(candidat)">Affecter</button>
+			<!-- <button type="button" (click)="details(candidat)">Details</button> 
+			<button type="button" (click)="edit(candidat)">Edit</button>
+			<button type="button" (click)="deleteCandidat(candidat)">Delete</button> -->
+		</td>
+		<td><button type="submit" (click)="deleteCandidat(candidat)">Supprimer</button></td>
+		
+
+	</tr>
+</table>
+
+<br>
+
+<button type="button" (click)="calculer()">Calculer</button>
+<div *ngIf="display == true">
+	<p>Candidats affectés    : {{result.affecter}}</p>
+	<p>Candidats désaffectés : {{result.desaffecter}}</p>
+</div>

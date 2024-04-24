@@ -1,0 +1,10 @@
+
+<div *ngIf="candidat != null">
+	Nom : {{candidat.nom}} <br>
+	Prenom : {{candidat.prenom}} <br>
+	Date Naissance : {{candidat.dateEntretien}} <br>
+	Genre :{{candidat.genre}} <br>
+	Age : {{candidat.Age}} <br>
+	Etat : {{candidat.etat}} <br>
+</div>
+<div *ngIf="candidat == null">La candidat n'existe pas</div>

@@ -1,0 +1,10 @@
+
+.right-align {
+    float: right; /* Pour aligner à droite en flottant l'élément vers la droite */
+    /* Vous pouvez également utiliser d'autres techniques de mise en page pour aligner à droite, comme Flexbox ou Grid, selon votre mise en page générale. */
+  }
+  .col{
+    font-size: x-large;
+    color:aliceblue
+  }
+ 
